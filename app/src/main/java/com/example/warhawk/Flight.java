@@ -4,6 +4,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
+import android.util.Log;
 
 import static com.example.warhawk.GameView.screenRatioX;
 import static com.example.warhawk.GameView.screenRatioY;
@@ -27,9 +28,8 @@ public class Flight {
         width /= 3;
         height /= 3;
 
-
-        width *= (int) screenRatioX;
-        height *= (int) screenRatioY;
+        width = Math.round(screenRatioX * width);
+        height = Math.round(screenRatioY * height);
 
         flight1 = Bitmap.createScaledBitmap(flight1, width, height, false);
         flight2 = Bitmap.createScaledBitmap(flight2, width, height, false);

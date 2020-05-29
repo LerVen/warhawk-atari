@@ -24,8 +24,8 @@ public class Enemy {
         width /= 3;
         height /= 3;
 
-        width *= (int) screenRatioX;
-        height *= (int) screenRatioY;
+        width = Math.round(screenRatioX * width);
+        height = Math.round(screenRatioY * height);
 
         enemy = Bitmap.createScaledBitmap(enemy, width, height, false);
 

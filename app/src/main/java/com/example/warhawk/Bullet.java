@@ -18,8 +18,8 @@ public class Bullet {
         width = bullet.getWidth();
         height = bullet.getHeight();
 
-        width *= (int) screenRatioX;
-        height *= (int)  screenRatioY;
+        width = Math.round(screenRatioX * width);
+        height = Math.round(screenRatioY * height);
 
         bullet = Bitmap.createScaledBitmap(bullet, width, height, false);
     }
